@@ -54,7 +54,6 @@ const lengthCalculator = async (playlist_id) => {
         const vidList = [];
         const response = await axios.get(URL1 + next_page);
         const results = await response.data;
-        console.log(response);
         for (const x of results.items) {
             vidList.push(x.contentDetails.videoId);
         }
