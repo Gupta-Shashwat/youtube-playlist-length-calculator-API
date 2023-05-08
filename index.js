@@ -14,7 +14,7 @@ const fetchLength = async (req, res) => {
     try {
         const { ytplaylist_id } = req.params;
         const len = await lengthCalculator(ytplaylist_id);
-        res.status(200).send(len);
+        res.status(200).json(len);
     } catch (error) {
         console.error(error);
         res.status(500).send(error.message);
