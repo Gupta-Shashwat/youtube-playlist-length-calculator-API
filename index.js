@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { Router } from 'express';
 import axios from 'axios';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -9,6 +10,8 @@ const router = Router();
 const app = express();
 const yt_api = process.env.API;
 const PORT = process.env.PORT || 5000;
+
+app.use(cors());
 
 const fetchLength = async (req, res) => {
     try {
